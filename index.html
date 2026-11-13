@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#12344A">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="글렙의 러시아어 공부">
+<title>글렙의 러시아어 공부</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Noto+Serif+KR:wght@500;600&family=Noto+Sans+KR:wght@400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 홈</a>
+  <header class="hero">
+    <div class="mono">Г</div>
+    <div class="eyebrow">Private Study</div>
+    <h1>글렙의<br>러시아어 공부</h1>
+    <div class="sub">Изучение русского языка</div>
+  </header>
+  <div class="player">
+    <button class="dot" type="button" id="pp" aria-label="재생">▶</button>
+    <div class="now"><div class="lbl">지금 강의</div><div class="ttl" id="nowTitle">2026.11.04 · 번역 연습</div></div>
+  </div>
+  <div class="modes">
+    <button id="m1" class="on" type="button">연속 듣기</button>
+    <button id="m2" type="button">한 강의 반복</button>
+    <button data-r="0.85" type="button">0.85×</button>
+    <button data-r="1" class="on" type="button">1×</button>
+    <button data-r="1.2" type="button">1.2×</button>
+  </div>
+  <div class="row">
+  <a class="review" href="review/2026-11-04.html">
+    <div class="date">2026.11.04</div>
+    <div class="title">번역 연습</div>
+    <div class="keys">то́лько е́сли · мне ну́жно · ме́жду/среди́ · ви́деть/смотре́ть</div>
+  </a>
+  <div class="acts">
+    <button class="play" type="button" data-i="0">듣기</button>
+    <a class="pdf" href="lectures/lecture-2026-11-04.pdf" target="_blank" rel="noopener">PDF</a>
+  </div>
+</div><div class="row">
+  <a class="review" href="review/2026-11-03.html">
+    <div class="date">2026.11.03</div>
+    <div class="title">목요일 대화 준비: 번역 연습</div>
+    <div class="keys">на мо́ре · бежа́ть/идти́ · что/зато́ · 형용사 일치</div>
+  </a>
+  <div class="acts">
+    <button class="play" type="button" data-i="1">듣기</button>
+    <a class="pdf" href="lectures/lecture-2026-11-03.pdf" target="_blank" rel="noopener">PDF</a>
+  </div>
+</div><div class="row">
+  <a class="review" href="review/2026-11-02.html">
+    <div class="date">2026.11.02</div>
+    <div class="title">목요일 대화 준비: 번역 연습</div>
+    <div class="keys">где/куда · нет+생격 · 계획 표현</div>
+  </a>
+  <div class="acts">
+    <button class="play" type="button" data-i="2">듣기</button>
+    <a class="pdf" href="lectures/lecture-2026-11-02.pdf" target="_blank" rel="noopener">PDF</a>
+  </div>
+</div><div class="row">
+  <a class="review" href="review/2026-11-01.html">
+    <div class="date">2026.11.01</div>
+    <div class="title">내 회사 이야기 + 과거형·나라 이름</div>
+    <div class="keys">과거형 · 나라 이름</div>
+  </a>
+  <div class="acts">
+    <button class="play" type="button" data-i="3">듣기</button>
+    <a class="pdf" href="lectures/lecture-2026-11-01.pdf" target="_blank" rel="noopener">PDF</a>
+  </div>
+</div><div class="row">
+  <a class="review" href="review/2026-10-31.html">
+    <div class="date">2026.10.31</div>
+    <div class="title">кото́рый 문장 + 여행 표현</div>
+    <div class="keys">кото́рый · 여행 표현</div>
+  </a>
+  <div class="acts">
+    <button class="play" type="button" data-i="4">듣기</button>
+    <a class="pdf" href="lectures/lecture-2026-10-31.pdf" target="_blank" rel="noopener">PDF</a>
+  </div>
+</div>
+</div>
+<audio id="au" preload="none"></audio>
+<script>
+const AUD = ['2026-11-04', '2026-11-03', '2026-11-02', '2026-11-01', '2026-10-31'];
+const TTL = ['2026.11.04 · 번역 연습', '2026.11.03 · 목요일 대화 준비: 번역 연습', '2026.11.02 · 목요일 대화 준비: 번역 연습', '2026.11.01 · 내 회사 이야기 + 과거형·나라 이름', '2026.10.31 · кото́рый 문장 + 여행 표현'];
+const au = document.getElementById("au");
+const pp = document.getElementById("pp");
+const nowTitle = document.getElementById("nowTitle");
+const m1 = document.getElementById("m1");
+const m2 = document.getElementById("m2");
+const plays = [...document.querySelectorAll(".play")];
+let cur = -1, mode = "all", rate = 1;
+function load(i, play) {
+  cur = i;
+  au.src = "audio/lecture-" + AUD[i] + ".mp3";
+  au.playbackRate = rate;
+  nowTitle.textContent = TTL[i];
+  plays.forEach((b, j) => b.classList.toggle("on", j === i));
+  if (play) au.play().catch(() => {});
+}
+plays.forEach(b => b.onclick = () => load(+b.dataset.i, true));
+pp.onclick = () => {
+  if (cur < 0) { load(0, true); return; }
+  if (au.paused) au.play().catch(() => {});
+  else au.pause();
+};
+au.onplay = () => { pp.textContent = "⏸"; };
+au.onpause = () => { pp.textContent = "▶"; };
+au.onloadedmetadata = () => { au.playbackRate = rate; };
+function setMode(m) {
+  mode = m;
+  au.loop = (m === "one");
+  m1.classList.toggle("on", m === "all");
+  m2.classList.toggle("on", m === "one");
+}
+m1.onclick = () => setMode("all");
+m2.onclick = () => setMode("one");
+au.onended = () => { if (mode === "all" && cur + 1 < AUD.length) load(cur + 1, true); };
+document.querySelectorAll(".modes [data-r]").forEach(b => {
+  b.onclick = () => {
+    rate = +b.dataset.r;
+    au.playbackRate = rate;
+    document.querySelectorAll(".modes [data-r]").forEach(x => x.classList.toggle("on", x === b));
+  };
+});
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  var manifest = document.querySelector('link[rel="manifest"]');
+  if (manifest) navigator.serviceWorker.register(new URL("sw.js", manifest.href));
+}
+</script>
+</body>
+</html>
