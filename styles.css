@@ -313,19 +313,8 @@ body.songs h1{font-size:28px;text-align:left;margin:4px 0 8px}
   .song-frame{height:300px}
 }
 
-/* 홈 주 묶음. 새 주는 index.html 맨 위에 section.week를 추가한다. */
-.week{margin:18px 0 2px}
-.week h2{
-  margin:0 4px;
-  font-family:"Noto Serif KR",serif;
-  font-weight:600;
-  font-size:16px;
-  line-height:1.45;
-  color:#fff8e8;
-  letter-spacing:.01em;
-  text-shadow:0 2px 12px rgba(0,0,0,.4);
-  word-break:keep-all;
-}
+/* 홈은 주마다 카드 하나. 새 주는 index.html 맨 위에 article.week-card를 추가한다. */
+.week{margin:0}
 .week-lead{
   margin:-6px 0 16px;
   color:#ffe7b0;
@@ -337,6 +326,45 @@ body.songs h1{font-size:28px;text-align:left;margin:4px 0 8px}
   word-break:keep-all;
 }
 .row.week-card{
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
   border-color:rgba(234,208,135,.9);
   background:rgba(255,248,230,.66);
 }
+.week-card > .review{flex:none}
+.week-card > .review > .title{font-size:18px}
+.week-card .theme{
+  margin-top:3px;
+  font-size:13px;
+  line-height:1.45;
+  color:#5c5346;
+  word-break:keep-all;
+}
+.week-card details{margin-top:10px}
+.week-card summary{
+  display:block;
+  cursor:pointer;
+  list-style:none;
+  font-family:"Noto Sans KR",sans-serif;
+  font-size:13px;
+  font-weight:700;
+  color:#8a6a28;
+  padding:8px 2px 2px;
+  border-top:1px solid rgba(180,138,60,.28);
+}
+.week-card summary::-webkit-details-marker{display:none}
+.week-card summary::marker{content:""}
+.week-card summary::before{content:"▸ "}
+.week-card details[open] summary::before{content:"▾ "}
+.lec{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px;
+  padding:10px 0 2px;
+  border-top:1px solid rgba(180,138,60,.18);
+}
+.lec .review,.lec .meta{flex:1 1 150px;min-width:0}
+.lec .title{font-size:15px}
+.lec .acts{margin-left:auto}

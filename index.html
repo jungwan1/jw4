@@ -37,85 +37,90 @@
     <button data-r="1.2" type="button">1.2×</button>
   </div>
 <!--
-  새 주: 이 자리(가장 위)에 section.week를 추가한다.
-  제목은 'N월 M째주 (M/D~M/D)'. 주간 복습(week/그주월요일.html)을 먼저 두고, 그 아래 그 주 .row를 둔다.
+  새 주: 이 자리(가장 위)에 카드 하나만 추가한다.
+  제목은 'N월 M째주 (M/D~M/D)'. 카드를 누르면 week/그주월요일.html로 간다.
+  날짜별 듣기·PDF·복습은 카드 안 details에 넣고 기본은 접는다. summary는 '강의 듣기 · N개'.
   항목이 10개 미만인 주는 페이지를 만들지 않고 다음 주와 합친다. 제목은 두 주를 잇는다.
   .play의 data-i는 AUD 순서와 같고, 버튼도 그 순서로 이어져 있어야 한다. README.md '새 주 추가 방법'.
 -->
 <section class="week">
-  <h2>11월 첫째주 (11/2~11/8)</h2>
-  <div class="row week-card">
+  <article class="row week-card">
     <a class="review" href="week/2026-11-02.html">
-      <div class="date">주간 복습</div>
-      <div class="title">비교·시제와 여행 계획, 그리고 생활에서 쓰는 말</div>
+      <div class="title">11월 첫째주 (11/2~11/8)</div>
+      <div class="theme">비교·시제와 여행 계획, 그리고 생활에서 쓰는 말</div>
       <div class="keys">то́лько е́сли · в Росси́и / в Росси́ю · води́ть / вести́</div>
     </a>
-  </div>
-<div class="row">
-  <a class="review" href="review/2026-11-04.html">
-    <div class="date">2026.11.04</div>
-    <div class="title">번역 연습</div>
-    <div class="keys">то́лько е́сли · мне ну́жно · ме́жду/среди́ · ви́деть/смотре́ть</div>
-  </a>
-  <div class="acts">
-    <button class="play" type="button" data-i="0">듣기</button>
-    <a class="pdf" href="lectures/lecture-2026-11-04.pdf" target="_blank" rel="noopener">PDF</a>
-  </div>
-</div>
-<div class="row">
-  <a class="review" href="review/2026-11-03.html">
-    <div class="date">2026.11.03</div>
-    <div class="title">목요일 대화 준비: 번역 연습</div>
-    <div class="keys">на мо́ре · бежа́ть/идти́ · что/зато́ · 형용사 일치</div>
-  </a>
-  <div class="acts">
-    <button class="play" type="button" data-i="1">듣기</button>
-    <a class="pdf" href="lectures/lecture-2026-11-03.pdf" target="_blank" rel="noopener">PDF</a>
-  </div>
-</div>
-<div class="row">
-  <a class="review" href="review/2026-11-02.html">
-    <div class="date">2026.11.02</div>
-    <div class="title">목요일 대화 준비: 번역 연습</div>
-    <div class="keys">где/куда · нет+생격 · 계획 표현</div>
-  </a>
-  <div class="acts">
-    <button class="play" type="button" data-i="2">듣기</button>
-    <a class="pdf" href="lectures/lecture-2026-11-02.pdf" target="_blank" rel="noopener">PDF</a>
-  </div>
-</div>
+    <details>
+      <summary>강의 듣기 · 3개</summary>
+      <div class="lec">
+        <a class="review" href="review/2026-11-04.html">
+          <div class="date">2026.11.04</div>
+          <div class="title">번역 연습</div>
+          <div class="keys">то́лько е́сли · мне ну́жно · ме́жду/среди́ · ви́деть/смотре́ть</div>
+        </a>
+        <div class="acts">
+          <button class="play" type="button" data-i="0">듣기</button>
+          <a class="pdf" href="lectures/lecture-2026-11-04.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
+      </div>
+      <div class="lec">
+        <a class="review" href="review/2026-11-03.html">
+          <div class="date">2026.11.03</div>
+          <div class="title">목요일 대화 준비: 번역 연습</div>
+          <div class="keys">на мо́ре · бежа́ть/идти́ · что/зато́ · 형용사 일치</div>
+        </a>
+        <div class="acts">
+          <button class="play" type="button" data-i="1">듣기</button>
+          <a class="pdf" href="lectures/lecture-2026-11-03.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
+      </div>
+      <div class="lec">
+        <a class="review" href="review/2026-11-02.html">
+          <div class="date">2026.11.02</div>
+          <div class="title">목요일 대화 준비: 번역 연습</div>
+          <div class="keys">где/куда · нет+생격 · 계획 표현</div>
+        </a>
+        <div class="acts">
+          <button class="play" type="button" data-i="2">듣기</button>
+          <a class="pdf" href="lectures/lecture-2026-11-02.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
+      </div>
+    </details>
+  </article>
 </section>
 <section class="week">
-  <h2>10월 마지막주 (10/26~11/1)</h2>
-  <div class="row week-card">
+  <article class="row week-card">
     <a class="review" href="week/2026-10-26.html">
-      <div class="date">주간 복습</div>
-      <div class="title">인사·자기소개와 여행에서 바로 쓰는 말</div>
+      <div class="title">10월 마지막주 (10/26~11/1)</div>
+      <div class="theme">인사·자기소개와 여행에서 바로 쓰는 말</div>
       <div class="keys">Приве́т · Меня́ зову́т · Ско́лько э́то сто́ит?</div>
     </a>
-  </div>
-<div class="row">
-  <a class="review" href="review/2026-11-01.html">
-    <div class="date">2026.11.01</div>
-    <div class="title">내 회사 이야기 + 과거형·나라 이름</div>
-    <div class="keys">과거형 · 나라 이름</div>
-  </a>
-  <div class="acts">
-    <button class="play" type="button" data-i="3">듣기</button>
-    <a class="pdf" href="lectures/lecture-2026-11-01.pdf" target="_blank" rel="noopener">PDF</a>
-  </div>
-</div>
-<div class="row">
-  <a class="review" href="review/2026-10-31.html">
-    <div class="date">2026.10.31</div>
-    <div class="title">кото́рый 문장 + 여행 표현</div>
-    <div class="keys">кото́рый · 여행 표현</div>
-  </a>
-  <div class="acts">
-    <button class="play" type="button" data-i="4">듣기</button>
-    <a class="pdf" href="lectures/lecture-2026-10-31.pdf" target="_blank" rel="noopener">PDF</a>
-  </div>
-</div>
+    <details>
+      <summary>강의 듣기 · 2개</summary>
+      <div class="lec">
+        <a class="review" href="review/2026-11-01.html">
+          <div class="date">2026.11.01</div>
+          <div class="title">내 회사 이야기 + 과거형·나라 이름</div>
+          <div class="keys">과거형 · 나라 이름</div>
+        </a>
+        <div class="acts">
+          <button class="play" type="button" data-i="3">듣기</button>
+          <a class="pdf" href="lectures/lecture-2026-11-01.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
+      </div>
+      <div class="lec">
+        <a class="review" href="review/2026-10-31.html">
+          <div class="date">2026.10.31</div>
+          <div class="title">кото́рый 문장 + 여행 표현</div>
+          <div class="keys">кото́рый · 여행 표현</div>
+        </a>
+        <div class="acts">
+          <button class="play" type="button" data-i="4">듣기</button>
+          <a class="pdf" href="lectures/lecture-2026-10-31.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
+      </div>
+    </details>
+  </article>
 </section>
 <audio id="au" preload="none"></audio>
 <script>
