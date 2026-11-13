@@ -89,10 +89,12 @@ body.lesson h1{font-size:24px;text-align:left;margin:8px 0 14px}
   border-radius:16px;padding:14px;margin:10px 0;box-shadow:0 10px 26px rgba(0,0,0,.12)
 }
 .card h3{margin:0 0 8px;font-size:16px;color:#8a6a28;font-family:"Noto Serif KR",serif}
-.r{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid rgba(180,138,60,.18)}
+.r{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid rgba(180,138,60,.18);flex-wrap:wrap;align-items:flex-start}
 .r:last-child{border:0}
-.ru{font-family:"PT Serif","Noto Serif",serif;font-weight:700;font-size:17px}
+.r > span{min-width:0;max-width:100%}
+.ru{font-family:"PT Serif","Noto Serif",serif;font-weight:700;font-size:17px;overflow-wrap:anywhere}
 .ko{color:#5c5346;font-size:14px;word-break:keep-all}
+.say{font-weight:700;color:#3a2b12;font-size:14px;word-break:keep-all}
 .pt{font-size:13px;background:rgba(234,208,135,.28);border-radius:8px;padding:8px;margin:8px 0 0;word-break:keep-all}
 table{width:100%;border-collapse:collapse;font-size:14px;background:rgba(255,255,255,.25);border-radius:10px;overflow:hidden}
 td,th{border:1px solid rgba(180,138,60,.22);padding:6px;word-break:keep-all}
@@ -309,4 +311,32 @@ body.songs h1{font-size:28px;text-align:left;margin:4px 0 8px}
 @media (max-width:360px){
   .song-title{font-size:16px}
   .song-frame{height:300px}
+}
+
+/* 홈 주 묶음. 새 주는 index.html 맨 위에 section.week를 추가한다. */
+.week{margin:18px 0 2px}
+.week h2{
+  margin:0 4px;
+  font-family:"Noto Serif KR",serif;
+  font-weight:600;
+  font-size:16px;
+  line-height:1.45;
+  color:#fff8e8;
+  letter-spacing:.01em;
+  text-shadow:0 2px 12px rgba(0,0,0,.4);
+  word-break:keep-all;
+}
+.week-lead{
+  margin:-6px 0 16px;
+  color:#ffe7b0;
+  font-family:"Noto Serif KR",serif;
+  font-size:15px;
+  font-weight:500;
+  line-height:1.55;
+  text-shadow:0 1px 8px rgba(0,0,0,.35);
+  word-break:keep-all;
+}
+.row.week-card{
+  border-color:rgba(234,208,135,.9);
+  background:rgba(255,248,230,.66);
 }
