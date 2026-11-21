@@ -17,164 +17,95 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Noto+Serif+KR:wght@500;600&family=Noto+Sans+KR:wght@400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="daily">
+<!-- 새 주 카드는 여기가 아니라 past.html 맨 위에 넣는다. README.md '새 주 추가 방법'. -->
 <div class="wrap">
-  <header class="hero">
-    <div class="mono">Г</div>
-    <div class="eyebrow">Private Study</div>
-    <h1>글렙의<br>러시아어 공부</h1>
-    <div class="sub">Изучение русского языка</div>
+  <header class="daily-top">
+    <div class="mono" aria-hidden="true">Г</div>
+    <h1>글렙의 러시아어 공부</h1>
+    <a class="past-link" href="past.html">지난 공부</a>
   </header>
-  <div class="player">
-    <button class="dot" type="button" id="pp" aria-label="재생">▶</button>
-    <div class="now"><div class="lbl">지금 강의</div><div class="ttl" id="nowTitle">2026.11.04 · 번역 연습</div></div>
-  </div>
-  <div class="modes">
-    <button id="m1" class="on" type="button">연속 듣기</button>
-    <button id="m2" type="button">한 강의 반복</button>
-    <button data-r="0.85" type="button">0.85×</button>
-    <button data-r="1" class="on" type="button">1×</button>
-    <button data-r="1.2" type="button">1.2×</button>
-  </div>
-<!--
-  새 주: 이 자리(가장 위)에 카드 하나만 추가한다.
-  제목은 'N월 M째주 (M/D~M/D)'. 카드를 누르면 week/그주월요일.html로 간다.
-  날짜별 듣기·PDF·복습은 카드 안 details에 넣고 기본은 접는다. summary는 '강의 듣기 · N개'.
-  항목이 10개 미만인 주는 페이지를 만들지 않고 다음 주와 합친다. 제목은 두 주를 잇는다.
-  .play의 data-i는 AUD 순서와 같고, 버튼도 그 순서로 이어져 있어야 한다. README.md '새 주 추가 방법'.
--->
-<section class="week">
-  <article class="row week-card">
-    <a class="review" href="week/2026-11-09.html">
-      <div class="title">11월 둘째주 (11/9~11/15)</div>
-      <div class="theme">싸움·경고, 취미, 기다리기·살기, 그리고 어디로 가는지 말하기</div>
-      <div class="keys">ссо́риться / дра́ться · хо́бби · ждать / жить</div>
-    </a>
-  </article>
-</section>
-<section class="week">
-  <article class="row week-card">
-    <a class="review" href="week/2026-11-02.html">
-      <div class="title">11월 첫째주 (11/2~11/8)</div>
-      <div class="theme">비교·시제와 여행 계획, 그리고 생활에서 쓰는 말</div>
-      <div class="keys">то́лько е́сли · в Росси́и / в Росси́ю · води́ть / вести́</div>
-    </a>
-    <details>
-      <summary>강의 듣기 · 3개</summary>
-      <div class="lec">
-        <a class="review" href="review/2026-11-04.html">
-          <div class="date">2026.11.04</div>
-          <div class="title">번역 연습</div>
-          <div class="keys">то́лько е́сли · мне ну́жно · ме́жду/среди́ · ви́деть/смотре́ть</div>
-        </a>
-        <div class="acts">
-          <button class="play" type="button" data-i="0">듣기</button>
-          <a class="pdf" href="lectures/lecture-2026-11-04.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-      <div class="lec">
-        <a class="review" href="review/2026-11-03.html">
-          <div class="date">2026.11.03</div>
-          <div class="title">목요일 대화 준비: 번역 연습</div>
-          <div class="keys">на мо́ре · бежа́ть/идти́ · что/зато́ · 형용사 일치</div>
-        </a>
-        <div class="acts">
-          <button class="play" type="button" data-i="1">듣기</button>
-          <a class="pdf" href="lectures/lecture-2026-11-03.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-      <div class="lec">
-        <a class="review" href="review/2026-11-02.html">
-          <div class="date">2026.11.02</div>
-          <div class="title">목요일 대화 준비: 번역 연습</div>
-          <div class="keys">где/куда · нет+생격 · 계획 표현</div>
-        </a>
-        <div class="acts">
-          <button class="play" type="button" data-i="2">듣기</button>
-          <a class="pdf" href="lectures/lecture-2026-11-02.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-    </details>
-  </article>
-</section>
-<section class="week">
-  <article class="row week-card">
-    <a class="review" href="week/2026-10-26.html">
-      <div class="title">10월 마지막주 (10/26~11/1)</div>
-      <div class="theme">인사·자기소개와 여행에서 바로 쓰는 말</div>
-      <div class="keys">Приве́т · Меня́ зову́т · Ско́лько э́то сто́ит?</div>
-    </a>
-    <details>
-      <summary>강의 듣기 · 2개</summary>
-      <div class="lec">
-        <a class="review" href="review/2026-11-01.html">
-          <div class="date">2026.11.01</div>
-          <div class="title">내 회사 이야기 + 과거형·나라 이름</div>
-          <div class="keys">과거형 · 나라 이름</div>
-        </a>
-        <div class="acts">
-          <button class="play" type="button" data-i="3">듣기</button>
-          <a class="pdf" href="lectures/lecture-2026-11-01.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-      <div class="lec">
-        <a class="review" href="review/2026-10-31.html">
-          <div class="date">2026.10.31</div>
-          <div class="title">кото́рый 문장 + 여행 표현</div>
-          <div class="keys">кото́рый · 여행 표현</div>
-        </a>
-        <div class="acts">
-          <button class="play" type="button" data-i="4">듣기</button>
-          <a class="pdf" href="lectures/lecture-2026-10-31.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-    </details>
-  </article>
-</section>
-<audio id="au" preload="none"></audio>
+  <p class="today-line" id="todayLine"></p>
+
+  <section class="ref" aria-labelledby="sec-dow">
+    <h2 id="sec-dow">요일</h2>
+    <ul>
+      <li data-dow="1"><span class="ru" lang="ru">понедельник</span> <span class="ko">월요일</span></li>
+      <li data-dow="2"><span class="ru" lang="ru">вторник</span> <span class="ko">화요일</span></li>
+      <li data-dow="3"><span class="ru" lang="ru">среда</span> <span class="ko">수요일</span></li>
+      <li data-dow="4"><span class="ru" lang="ru">четверг</span> <span class="ko">목요일</span></li>
+      <li data-dow="5"><span class="ru" lang="ru">пятница</span> <span class="ko">금요일</span></li>
+      <li data-dow="6"><span class="ru" lang="ru">суббота</span> <span class="ko">토요일</span></li>
+      <li data-dow="0"><span class="ru" lang="ru">воскресенье</span> <span class="ko">일요일</span></li>
+    </ul>
+  </section>
+
+  <section class="ref" aria-labelledby="sec-month">
+    <h2 id="sec-month">월</h2>
+    <ul class="months">
+      <li data-month="0"><span class="ru" lang="ru">январь</span> <span class="ko">1월</span></li>
+      <li data-month="1"><span class="ru" lang="ru">февраль</span> <span class="ko">2월</span></li>
+      <li data-month="2"><span class="ru" lang="ru">март</span> <span class="ko">3월</span></li>
+      <li data-month="3"><span class="ru" lang="ru">апрель</span> <span class="ko">4월</span></li>
+      <li data-month="4"><span class="ru" lang="ru">май</span> <span class="ko">5월</span></li>
+      <li data-month="5"><span class="ru" lang="ru">июнь</span> <span class="ko">6월</span></li>
+      <li data-month="6"><span class="ru" lang="ru">июль</span> <span class="ko">7월</span></li>
+      <li data-month="7"><span class="ru" lang="ru">август</span> <span class="ko">8월</span></li>
+      <li data-month="8"><span class="ru" lang="ru">сентябрь</span> <span class="ko">9월</span></li>
+      <li data-month="9"><span class="ru" lang="ru">октябрь</span> <span class="ko">10월</span></li>
+      <li data-month="10"><span class="ru" lang="ru">ноябрь</span> <span class="ko">11월</span></li>
+      <li data-month="11"><span class="ru" lang="ru">декабрь</span> <span class="ko">12월</span></li>
+    </ul>
+  </section>
+
+  <section class="ref" aria-labelledby="sec-season">
+    <h2 id="sec-season">계절</h2>
+    <ul>
+      <li data-season="spring"><span class="ru" lang="ru">весна</span> <span class="ko">봄</span></li>
+      <li data-season="summer"><span class="ru" lang="ru">лето</span> <span class="ko">여름</span></li>
+      <li data-season="autumn"><span class="ru" lang="ru">осень</span> <span class="ko">가을</span></li>
+      <li data-season="winter"><span class="ru" lang="ru">зима</span> <span class="ko">겨울</span></li>
+    </ul>
+  </section>
+
+  <section class="ref" aria-labelledby="sec-in">
+    <h2 id="sec-in">~에</h2>
+    <ul>
+      <li data-month="3"><span class="ru" lang="ru">в апреле</span> <span class="ko">4월에</span></li>
+      <li data-dow="5"><span class="ru" lang="ru">в пятницу</span> <span class="ko">금요일에</span></li>
+      <li data-season="spring"><span class="ru" lang="ru">весной</span> <span class="ko">봄에</span></li>
+      <li data-season="summer"><span class="ru" lang="ru">летом</span> <span class="ko">여름에</span></li>
+      <li data-season="autumn"><span class="ru" lang="ru">осенью</span> <span class="ko">가을에</span></li>
+      <li data-season="winter"><span class="ru" lang="ru">зимой</span> <span class="ko">겨울에</span></li>
+    </ul>
+  </section>
+</div>
 <script>
-const AUD = ['2026-11-04', '2026-11-03', '2026-11-02', '2026-11-01', '2026-10-31'];
-const TTL = ['2026.11.04 · 번역 연습', '2026.11.03 · 목요일 대화 준비: 번역 연습', '2026.11.02 · 목요일 대화 준비: 번역 연습', '2026.11.01 · 내 회사 이야기 + 과거형·나라 이름', '2026.10.31 · кото́рый 문장 + 여행 표현'];
-const au = document.getElementById("au");
-const pp = document.getElementById("pp");
-const nowTitle = document.getElementById("nowTitle");
-const m1 = document.getElementById("m1");
-const m2 = document.getElementById("m2");
-const plays = [...document.querySelectorAll(".play")];
-let cur = -1, mode = "all", rate = 1;
-function load(i, play) {
-  cur = i;
-  au.src = "audio/lecture-" + AUD[i] + ".mp3";
-  au.playbackRate = rate;
-  nowTitle.textContent = TTL[i];
-  plays.forEach((b, j) => b.classList.toggle("on", j === i));
-  if (play) au.play().catch(() => {});
-}
-plays.forEach(b => b.onclick = () => load(+b.dataset.i, true));
-pp.onclick = () => {
-  if (cur < 0) { load(0, true); return; }
-  if (au.paused) au.play().catch(() => {});
-  else au.pause();
-};
-au.onplay = () => { pp.textContent = "⏸"; };
-au.onpause = () => { pp.textContent = "▶"; };
-au.onloadedmetadata = () => { au.playbackRate = rate; };
-function setMode(m) {
-  mode = m;
-  au.loop = (m === "one");
-  m1.classList.toggle("on", m === "all");
-  m2.classList.toggle("on", m === "one");
-}
-m1.onclick = () => setMode("all");
-m2.onclick = () => setMode("one");
-au.onended = () => { if (mode === "all" && cur + 1 < AUD.length) load(cur + 1, true); };
-document.querySelectorAll(".modes [data-r]").forEach(b => {
-  b.onclick = () => {
-    rate = +b.dataset.r;
-    au.playbackRate = rate;
-    document.querySelectorAll(".modes [data-r]").forEach(x => x.classList.toggle("on", x === b));
-  };
-});
+// 방문자의 오늘. 계절은 3–5월 봄, 6–8월 여름, 9–11월 가을, 12–2월 겨울.
+(function () {
+  var now = new Date();
+  var dow = now.getDay();
+  var month = now.getMonth();
+  var season = month <= 1 || month === 11 ? "winter" : month <= 4 ? "spring" : month <= 7 ? "summer" : "autumn";
+  var dayKo = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+  var monthKo = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"];
+  var seasonKo = { winter: "겨울", spring: "봄", summer: "여름", autumn: "가을" };
+  var line = document.getElementById("todayLine");
+  if (line) line.textContent = "오늘은 " + dayKo[dow] + " · " + monthKo[month] + " · " + seasonKo[season];
+  function mark(el) {
+    el.classList.add("is-today");
+    el.setAttribute("aria-current", "date");
+  }
+  document.querySelectorAll("[data-dow]").forEach(function (el) {
+    if (Number(el.getAttribute("data-dow")) === dow) mark(el);
+  });
+  document.querySelectorAll("[data-month]").forEach(function (el) {
+    if (Number(el.getAttribute("data-month")) === month) mark(el);
+  });
+  document.querySelectorAll("[data-season]").forEach(function (el) {
+    if (el.getAttribute("data-season") === season) mark(el);
+  });
+})();
 </script>
 <script>
 if ("serviceWorker" in navigator) {
