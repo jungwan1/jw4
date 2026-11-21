@@ -313,7 +313,7 @@ body.songs h1{font-size:28px;text-align:left;margin:4px 0 8px}
   .song-frame{height:300px}
 }
 
-/* 홈은 주마다 카드 하나. 새 주는 index.html 맨 위에 article.week-card를 추가한다. */
+/* 지난 공부는 주마다 카드 하나. 새 주는 past.html 맨 위에 article.week-card를 추가한다. 홈에는 넣지 않는다. */
 .week{margin:0}
 .week-lead{
   margin:-6px 0 16px;
@@ -368,3 +368,62 @@ body.songs h1{font-size:28px;text-align:left;margin:4px 0 8px}
 .lec .review,.lec .meta{flex:1 1 150px;min-width:0}
 .lec .title{font-size:15px}
 .lec .acts{margin-left:auto}
+
+body.daily .wrap{padding-top:18px}
+.daily-top{display:flex;align-items:center;gap:10px;margin:0 0 10px}
+.daily-top .mono{
+  width:40px;height:40px;margin:0;flex:none;font-size:20px;
+  box-shadow:0 0 0 3px rgba(255,255,255,.08),0 6px 14px rgba(0,0,0,.16);
+}
+.daily-top h1{flex:1;min-width:0;text-align:left;font-size:17px;line-height:1.35}
+.past-link{
+  flex:none;text-decoration:none;border-radius:999px;padding:7px 10px;
+  font-family:"Noto Sans KR",sans-serif;font-size:12px;font-weight:700;line-height:1.2;
+  color:#3a2b12;background:rgba(255,252,246,.55);border:1px solid rgba(255,255,255,.7);
+}
+.past-link:focus-visible{outline:2px solid #fff4d2;outline-offset:3px}
+.today-line{
+  margin:0 2px 12px;min-height:1.4em;
+  color:#ffe7b0;font-size:13px;font-weight:700;
+  text-shadow:0 1px 8px rgba(0,0,0,.35);word-break:keep-all;
+}
+.ref h2{
+  margin:0 0 4px;padding:0 0 6px;
+  border-bottom:1px solid rgba(180,138,60,.22);
+  font-family:"Noto Serif KR",serif;font-size:16px;font-weight:600;
+  line-height:1.4;color:#8a6a28;text-align:left;
+}
+.ref ul{list-style:none;margin:0;padding:0}
+.ref-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  column-gap:10px;
+  align-items:center;
+  padding:7px 4px;
+  border-bottom:1px solid rgba(180,138,60,.16);
+}
+.ref-row:last-child{border-bottom:0}
+.ref-row .ru{grid-column:1;grid-row:1;font-size:18px;line-height:1.25}
+.ref-row .say{grid-column:1;grid-row:2;font-weight:500;font-size:13px;color:#6d5a36}
+.ref-row .ko{
+  grid-column:2;grid-row:1 / span 2;align-self:center;
+  font-weight:700;font-size:14px;color:#3a2b12;white-space:nowrap;
+}
+.ref-row.is-today{
+  margin:2px 0;
+  padding:7px 8px 7px 10px;
+  background:rgba(234,208,135,.55);
+  border-radius:12px;
+  border-bottom-color:transparent;
+  box-shadow:inset 3px 0 0 #c4a153;
+}
+.today-tag{display:none}
+.ref-row.is-today .today-tag{
+  display:inline-block;margin-left:6px;padding:1px 6px;
+  border-radius:999px;background:#fff8e8;color:#8a6a28;
+  font-size:11px;font-weight:700;vertical-align:1px;
+}
+@media (max-width:360px){
+  .daily-top h1{font-size:16px}
+  .past-link{padding:6px 8px}
+}
