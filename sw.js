@@ -1,6 +1,6 @@
 // HTML은 열어 볼 때 캐시한다. 미리 담는 주소 목록은 없다.
 // 홈·지난 공부·주 페이지를 바꾸면 이 이름만 올려 예전 캐시를 비운다.
-const CACHE = "jw4-study-v6";
+const CACHE = "jw4-study-v7";
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
