@@ -313,7 +313,7 @@ body.songs h1{font-size:28px;text-align:left;margin:4px 0 8px}
   .song-frame{height:300px}
 }
 
-/* 지난 공부는 주마다 카드 하나. 새 주는 past.html 맨 위에 article.week-card를 추가한다. 홈에는 넣지 않는다. */
+/* 지난 공부 주 카드 스타일(예전 past.html). 지금은 past.html이 문장 목록이라 쓰이지 않지만, 깨지지 않게 남겨 둔다. */
 .week{margin:0}
 .week-lead{
   margin:-6px 0 16px;
@@ -422,3 +422,18 @@ body.daily .wrap{padding-top:18px}
   .daily-top h1{font-size:16px}
   .past-link{padding:6px 8px}
 }
+
+
+/* 지난 공부(past.html): 날짜·주 구분 없이 최근 배운 문장을 위에 두고, 글씨를 키운다. 홈(body.daily)은 건드리지 않는다. */
+body.past .wrap{max-width:720px;padding:28px 16px 56px}
+body.past h1{font-size:28px;margin:4px 0 16px}
+body.past .back{font-size:17px;margin-bottom:16px}
+body.past .card{padding:18px 16px;margin:14px 0;border-radius:18px}
+body.past .card h3{font-size:20px;margin-bottom:10px}
+body.past .r{padding:8px 0;gap:10px}
+body.past .ru{font-size:24px;line-height:1.5}
+body.past .ko{font-size:18px;line-height:1.45}
+body.past .say{font-size:18px;line-height:1.45}
+body.past .pt{font-size:16px;line-height:1.55;padding:10px 12px;margin-top:10px}
+body.past .bar{padding:8px 0 12px}
+body.past .bar button{padding:12px 18px;font-size:17px}

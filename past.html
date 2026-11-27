@@ -17,174 +17,809 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Noto+Serif+KR:wght@500;600&family=Noto+Sans+KR:wght@400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="lesson past">
+<!--
+  지난 공부: 날짜·주 제목 없이, 최근에 배운 문장을 위에 두고 한 줄로 이어 붙인다.
+  새 항목은 이 목록 맨 위에 넣는다. 음성 강의(플레이어·듣기·연속 재생)는 넣지 않는다.
+  홈(index.html)은 바꾸지 않는다. README.md 참고.
+-->
 <div class="wrap">
   <a class="back" href="index.html">← 홈</a>
-  <header class="hero">
-    <div class="mono">Г</div>
-    <div class="eyebrow">Private Study</div>
-    <h1>글렙의<br>러시아어 공부</h1>
-    <div class="sub">Изучение русского языка</div>
-  </header>
-  <div class="player">
-    <button class="dot" type="button" id="pp" aria-label="재생">▶</button>
-    <div class="now"><div class="lbl">지금 강의</div><div class="ttl" id="nowTitle">2026.11.04 · 번역 연습</div></div>
-  </div>
-  <div class="modes">
-    <button id="m1" class="on" type="button">연속 듣기</button>
-    <button id="m2" type="button">한 강의 반복</button>
-    <button data-r="0.85" type="button">0.85×</button>
-    <button data-r="1" class="on" type="button">1×</button>
-    <button data-r="1.2" type="button">1.2×</button>
-  </div>
-<!--
-  새 주: 이 자리(가장 위)에 카드 하나만 추가한다. 홈(index.html)에는 넣지 않는다.
-  제목은 'N월 M째주 (M/D~M/D)'. 카드를 누르면 week/그주월요일.html로 간다.
-  날짜별 듣기·PDF·복습은 카드 안 details에 넣고 기본은 접는다. summary는 '강의 듣기 · N개'.
-  항목이 10개 미만인 주는 페이지를 만들지 않고 다음 주와 합친다. 제목은 두 주를 잇는다.
-  .play의 data-i는 AUD 순서와 같고, 버튼도 그 순서로 이어져 있어야 한다. README.md '새 주 추가 방법'.
--->
-<section class="week">
-  <article class="row week-card">
-    <a class="review" href="week/2026-11-16.html">
-      <div class="title">11월 셋째주 (11/16~11/22)</div>
-      <div class="theme">가게·식당·길·호텔·병원에서 쓰는 말, 도둑맞았을 때, 요일·월·계절, 그리고 노래 가사로 배우는 하느님께 기도하기</div>
-      <div class="keys">магази́н / рестора́н · укра́сть / отня́ть · моли́ться</div>
-    </a>
-  </article>
+  <h1>지난 공부</h1>
+  <div class="bar"><button id="q" type="button">숨기고 말해보기</button></div>
+<section class="card">
+<div class="r"><span class="ko">뜻: 머리가 아파요. / 가까운 약국이 어디예요? / 감기약이 필요해요. / 병원에 가야 해요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">У меня́ боли́т голова́. / Где ближа́йшая апте́ка? / Мне ну́жно лека́рство от просту́ды. / Мне ну́жно к врачу́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">우 미냐 발릿 걸라바. / 그데 블리자이샤야 아프쩨카. / 므녜 누즈나 리카르스트바 앗 쁘라스뚜드이. / 므녜 누즈나 크 브라추.</span></div>
+<p class="pt">апте́ка = 약국, лека́рство = 약, врач = 의사, боле́ть = 아프다, ка́шлять = 기침하다. лека́рство от просту́ды = 감기약.</p>
 </section>
-<section class="week">
-  <article class="row week-card">
-    <a class="review" href="week/2026-11-09.html">
-      <div class="title">11월 둘째주 (11/9~11/15)</div>
-      <div class="theme">싸움·경고, 취미, 기다리기·살기, 그리고 어디로 가는지 말하기</div>
-      <div class="keys">ссо́риться / дра́ться · хо́бби · ждать / жить</div>
-    </a>
-  </article>
+<section class="card">
+<div class="r"><span class="ko">뜻: 오늘 날씨 어때요? / 오늘 너무 추워요. / 나 추워졌어요. / 우리 산책할까요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Кака́я сего́дня пого́да? / Сего́дня о́чень хо́лодно. / Я замёрз. / Дава́й погуля́ем?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">카카야 시보드냐 빠고다. / 시보드냐 오친 홀라드나. / 야 자묘르스. / 다바이 빠굴랴옘?</span></div>
+<p class="pt">пого́да = 날씨, зонт = 우산, гуля́ть = 산책하다. 여자가 말하면 замёрз → замёрзла. 그냥 «Хо́лодно!» / «Мне хо́лодно.»라고 해도 돼요.</p>
 </section>
-<section class="week">
-  <article class="row week-card">
-    <a class="review" href="week/2026-11-02.html">
-      <div class="title">11월 첫째주 (11/2~11/8)</div>
-      <div class="theme">비교·시제와 여행 계획, 그리고 생활에서 쓰는 말</div>
-      <div class="keys">то́лько е́сли · в Росси́и / в Росси́ю · води́ть / вести́</div>
-    </a>
-    <details>
-      <summary>강의 듣기 · 3개</summary>
-      <div class="lec">
-        <a class="review" href="review/2026-11-04.html">
-          <div class="date">2026.11.04</div>
-          <div class="title">번역 연습</div>
-          <div class="keys">то́лько е́сли · мне ну́жно · ме́жду/среди́ · ви́деть/смотре́ть</div>
-        </a>
-        <div class="acts">
-          <button class="play" type="button" data-i="0">듣기</button>
-          <a class="pdf" href="lectures/lecture-2026-11-04.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-      <div class="lec">
-        <a class="review" href="review/2026-11-03.html">
-          <div class="date">2026.11.03</div>
-          <div class="title">목요일 대화 준비: 번역 연습</div>
-          <div class="keys">на мо́ре · бежа́ть/идти́ · что/зато́ · 형용사 일치</div>
-        </a>
-        <div class="acts">
-          <button class="play" type="button" data-i="1">듣기</button>
-          <a class="pdf" href="lectures/lecture-2026-11-03.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-      <div class="lec">
-        <a class="review" href="review/2026-11-02.html">
-          <div class="date">2026.11.02</div>
-          <div class="title">목요일 대화 준비: 번역 연습</div>
-          <div class="keys">где/куда · нет+생격 · 계획 표현</div>
-        </a>
-        <div class="acts">
-          <button class="play" type="button" data-i="2">듣기</button>
-          <a class="pdf" href="lectures/lecture-2026-11-02.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-    </details>
-  </article>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나는 놀랄 거야. / 너는 놀랄 거야. / 그녀는 놀랄 거야. / 놀라지 마! / 그녀가 알면 놀랄 거야.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я испуга́юсь. / Ты испуга́ешься. / Она́ испуга́ется. / Не испуга́йся! / Она́ испуга́ется, е́сли узна́ет.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 이스뿌가유스. / 띄 이스뿌가예쉬샤. / 아나 이스뿌가옛짜. / 니 이스뿌가이샤! / 아나 이스뿌가옛짜, 예슬리 우즈나옫.</span></div>
+<p class="pt">미래: испуга́юсь, испуга́ешься, испуга́ется, испуга́емся, испуга́етесь, испуга́ются.</p>
 </section>
-<section class="week">
-  <article class="row week-card">
-    <a class="review" href="week/2026-10-26.html">
-      <div class="title">10월 마지막주 (10/26~11/1)</div>
-      <div class="theme">인사·자기소개와 여행에서 바로 쓰는 말</div>
-      <div class="keys">Приве́т · Меня́ зову́т · Ско́лько э́то сто́ит?</div>
-    </a>
-    <details>
-      <summary>강의 듣기 · 2개</summary>
-      <div class="lec">
-        <a class="review" href="review/2026-11-01.html">
-          <div class="date">2026.11.01</div>
-          <div class="title">내 회사 이야기 + 과거형·나라 이름</div>
-          <div class="keys">과거형 · 나라 이름</div>
-        </a>
-        <div class="acts">
-          <button class="play" type="button" data-i="3">듣기</button>
-          <a class="pdf" href="lectures/lecture-2026-11-01.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-      <div class="lec">
-        <a class="review" href="review/2026-10-31.html">
-          <div class="date">2026.10.31</div>
-          <div class="title">кото́рый 문장 + 여행 표현</div>
-          <div class="keys">кото́рый · 여행 표현</div>
-        </a>
-        <div class="acts">
-          <button class="play" type="button" data-i="4">듣기</button>
-          <a class="pdf" href="lectures/lecture-2026-10-31.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-    </details>
-  </article>
+<section class="card">
+<div class="r"><span class="ko">뜻: 잘 놀라요. / 지금 무서워요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я пуга́юсь. / Я бою́сь. / Мне стра́шно.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 뿌가유스. / 야 바유스. / 므녜 스트라슈나.</span></div>
+<p class="pt">испуга́ться는 완료라서 현재형이 없어요. 과거는 испуга́лся, 미래는 испуга́юсь. 지금 무섭다면 бою́сь나 Мне стра́шно를 써요.</p>
 </section>
-<audio id="au" preload="none"></audio>
+<section class="card">
+<div class="r"><span class="ko">뜻: 어렸을 때 저는 개를 무서워했어요. / 땅이 흔들렸을 때 깜짝 놀랐어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">В де́тстве я боя́лся соба́к. / Я испуга́лся, когда́ земля́ затрясла́сь.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">브 젯스트베 야 바얄샤 사박. / 야 이스뿌갈샤, 카그다 짐랴 자뜨리슬라스.</span></div>
+<p class="pt">боя́лся는 계속 무서워했다는 뜻이고, испуга́лся는 순간 깜짝 놀라 무서웠다는 뜻이에요. 여자면 боя́лась / испуга́лась.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 어젯밤에 지진이 났어요. 무서웠어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Вчера́ но́чью бы́ло землетрясе́ние. Я испуга́лся. / Мне бы́ло стра́шно.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">브체라 노츄 브일라 짐리뜨리세니예. 야 이스뿌갈샤. / 므녜 브일라 스트라슈나.</span></div>
+<p class="pt">ночь → но́чью = 밤에. бою́сь는 지금 무섭다는 말, испуга́лся는 그때 무서웠다는 말이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 땅이 흔들려요. / 땅이 흔들렸어요. / 지진이 났어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Земля́ трясётся. / Земля́ трясла́сь. / Бы́ло землетрясе́ние.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">짐랴 뜨리됸짜. / 짐랴 뜨리슬라스. / 브일라 짐리뜨리세니예.</span></div>
+<p class="pt">землетрясе́ние = 지진. трясти́сь = 흔들리다.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 밥을 넣고, 야채를 넣어요. / 다 넣고 섞어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Кладём рис и о́вощи. / Кладём всё и переме́шиваем.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">끌라죰 리스 이 오바쉬. / 끌라죰 프쇼 이 뻬리메쉬바옘.</span></div>
+<p class="pt">кладём = 넣어요 (класть). переме́шиваем = 섞어요 (переме́шивать).</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 재료를 넣어서 섞어서 드세요. / 다 섞어서 드세요!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Положи́те ингредие́нты, перемеша́йте и ешьте. / Всё перемеша́йте и ешьте!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">빨라지쩨 인그리디옌뜨이, 뻬리미샤이쩨 이 예쉬쩨. / 프쇼 뻬리미샤이쩨 이 예쉬쩨!</span></div>
+<p class="pt">положи́ть = 넣다, перемеша́ть = 섞다. 존댓말 명령형이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 가는 길에 비싼 카페를 봤지만, 다른 데로 갔어요. / 카페에서 커피를 마셔요. / 포기 안 해, 한 번 더 해볼게!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">По доро́ге я ви́дел доро́гое кафе́, но пошёл в друго́е. / Я пью ко́фе в кафе́. / Я не сдаю́сь, я попро́бую ещё раз!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">빠 다로게 야 비젤 도로고예 카페, 노 빠숄 브 드루고예. / 야 삐유 코페 브 카페. / 야 니 즈다유스, 야 빠쁘로부유 이쇼 라스!</span></div>
+<p class="pt">자주 헷갈리는 말: доро́га(길) / до́рого(비싸요) / дорого́й(비싼) / друго́й(다른). ко́фе는 커피, кафе́는 카페. ви́жу는 봐요, бегу́는 뛰어요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 여기 줄 길다. 다른 카페 가자!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Здесь дли́нная о́чередь. Пойдём в друго́е кафе́!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">즈데스 들린나야 오체릿. 빠이다옴 브 드루고예 카페!</span></div>
+<p class="pt">о́чередь는 여성 명사라서 дли́нная / больша́я를 써요. друго́й는 다른, дорого́й는 비싼이에요. кафе́는 중성이라 в друго́е кафе́.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 줄 마지막이에요? / 줄 서 있어요. / 줄 길어요. / 이제 제 차례예요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Вы после́дний? / Я стою́ в о́череди. / Тут больша́я о́чередь. / Сейча́с моя́ о́чередь.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">브이 파슬레드니? / 야 스타유 브 오체리지. / 뚜뜨 발샤야 오체릿. / 시차스 마야 오체릿.</span></div>
+<p class="pt">о́чередь = 줄, 차례. больша́я о́чередь와 дли́нная о́чередь 둘 다 «줄이 길다»는 뜻으로 써요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 역까지 어떻게 가요? / 다음 정류장이 어디예요? / 캐리어 맡겨도 돼요? / 아침은 몇 시예요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Как добра́ться до вокза́ла? / Кака́я сле́дующая остано́вка? / Мо́жно оста́вить чемода́н? / Во ско́лько за́втрак?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">칵 다브라짜 다 박잘라? / 카카야 슬레두슈샤야 아스타노프카? / 모즈나 아스타비찌 치마단? / 바 스콜카 자프트락?</span></div>
+<p class="pt">чемода́н = 캐리어, остано́вка = 정류장, забыва́ть = 잊다, пока́зывать = 보여 주다.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 잘 골랐어. 여기 진짜 맛있다!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Ты хорошо́ вы́брала. Здесь о́чень вку́сно!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">띄 하라쇼 브이브랄라. 즈데스 오친 프꾸스나!</span></div>
+<p class="pt">남자가 골랐으면 вы́брал. вку́сно는 [프꾸스나]처럼 들려요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 고르셨어요? / 아직 고르는 중이에요. / 고를 게 많네요! / 잘 골랐어. / 좋은 선택!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Вы уже́ вы́брали? / Я ещё выбира́ю. / У вас большо́й вы́бор! / Ты хорошо́ вы́брал(а). / Хоро́ший вы́бор!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">브이 우제 브이브라리? / 야 이쇼 비비라유. / 우 바스 발쇼이 브이바르! / 띄 하라쇼 브이브랄(라). / 하로쉬 브이바르!</span></div>
+<p class="pt">выбира́ть는 고르는 중, вы́брать는 이미 고름. вы́бор = 선택.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 다른 재킷 주세요. / 취향이 달라요. / 뭐가 달라요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Дай мне другу́ю ку́ртку. / У нас ра́зные вку́сы. / Чем э́то отлича́ется?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">다이 므녜 드루구유 쿠르트쿠. / 우 나스 라즈늬예 프꾸스이. / 쳄 에따 아틀리차엣짜?</span></div>
+<p class="pt">друго́й = 다른 것, ра́зный = 서로 다른, отлича́ться = 다르다. дари́ть는 선물하다라서 헷갈리지 마세요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 너무 비싸요! / 가는 길에 아주 비싼 재킷을 샀어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Э́то о́чень до́рого! / По доро́ге я купи́л о́чень дорогу́ю ку́ртку.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">에따 오친 도로가! / 빠 다로게 야 꾸쁠 오친 도로구유 쿠르트쿠.</span></div>
+<p class="pt">доро́га = 길 (강세가 가운데), до́рого = 비싸요 (강세가 앞), дорого́й = 비싼/소중한.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 집에 가는 길에 커피를 샀어요. / 좋은 여행 되세요!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">По доро́ге домо́й я купи́л ко́фе. / Счастли́вого пути́!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">빠 다로게 다모이 야 꾸쁠 코페. / 샤슬리바바 뿌찌!</span></div>
+<p class="pt">доро́га는 실제 길, путь는 여정·여행 같은 길이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 입어 봐도 돼요? / 이거 얼마예요? / 카드로 계산돼도 돼요? / 영수증 주세요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Мо́жно приме́рить? / Ско́лько э́то сто́ит? / Мо́жно заплати́ть ка́ртой? / Да́йте, пожа́луйста, чек.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">모즈나 프리메리찌? / 스콜카 에따 스토잇? / 모즈나 자플라띠찌 카르타이? / 다이쩨, 빠잘루이스따, 첵.</span></div>
+<p class="pt">биле́т = 표, доро́га = 길, купи́ть = 사다, потеря́ть = 잃어버리다, опа́здывать = 늦다.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 뛰면서 노래를 들어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я слу́шаю пе́сни на бегу́. / Я слу́шаю пе́сню на бегу́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 슬루샤유 뻬스니 나 비구. / 야 슬루샤유 뻬스뉴 나 비구.</span></div>
+<p class="pt">пе́сня → пе́сню(하나, 대격) / пе́сни(여러 개). на бегу́ = 뛰면서.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나는 뛰면서 커피를 마셔요. / 뛰어가요! / 지금 가요!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я бегу́ и пью ко́фе. / Я бегу́! / Бегу́-бегу́!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 비구 이 삐유 코페. / 야 비구! / 비구-비구!</span></div>
+<p class="pt">иду́는 걸어간다, бегу́는 뛰어간다. на бегу́는 뛰면서·급하게, на ходу́는 걸으면서.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 가면서 커피를 마셔요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я иду́ и пью ко́фе. / Я пью ко́фе на ходу́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 이두 이 삐유 코페. / 야 삐유 코페 나 하두.</span></div>
+<p class="pt">на ходу́ = 걸으면서, 가면서.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 걸으면서 먹어요. / 가는 길에 먹어요. / 가면서 먹을게!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я иду́ и ем. / Я ем на ходу́. / Я ем по доро́ге. / Я пое́м на ходу́!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 이두 이 옘. / 야 옘 나 하두. / 야 옘 빠 다로게. / 야 파옘 나 하두!</span></div>
+<p class="pt">на ходу́ = 걸으면서, по доро́ге = 가는 길에.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 우리는 해야 해. / 우리 이거 해야 해요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Мы должны́ э́то сде́лать. / Нам на́до. / Нам ну́жно э́то сде́лать.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">믜 달즈늬 에따 즈젤라찌. / 남 나다. / 남 누즈나 에따 즈젤라찌.</span></div>
+<p class="pt">мне는 나한테, нам은 우리한테예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 한국어는 존댓말이 어려워요. / 한국에는 존댓말이 있어요. / 친구들과는 반말해요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">В коре́йском языке́ тру́дная ве́жливая речь. / В Коре́е есть ве́жливая речь. / С друзья́ми я говорю́ неформа́льно.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">브 카레이스캄 이지케 뜨루드나야 베즐리바야 레치. / 브 카레예 예스찌 베즐리바야 레치. / 스 드루지야미 야 가바류 니파르말나.</span></div>
+<p class="pt">존댓말 = ве́жливая речь, 반말 = неформа́льная речь. «한국어에서»는 в коре́йском языке́예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 우리 말 놓자! / 반말해도 돼요? / 우리는 존댓말 써요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Дава́й на «ты»! / Мо́жно на «ты»? / Мы на «вы».</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">다바이 나 띄! / 모즈나 나 띄? / 믜 나 브이.</span></div>
+<p class="pt">반말은 на «ты», 존댓말은 на «вы». 명령형은 Попро́буй! → Попро́буйте!, Не сдава́йся! → Не сдава́йтесь!처럼 -те를 붙여요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 포기 안 해! / 포기하지 마! / 해 보세요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я не сдаю́сь! / Не сдава́йся! / Попро́буйте!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 니 즈다유스! / 니 즈다바이샤! / 빠쁘로부이쩨!</span></div>
+<p class="pt">сдава́ться = 포기하다. попро́буйте는 «해 보세요, 드셔 보세요»예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 이 음식 먹어 봤어? / 아직 안 먹어 봤어. / 꼭 먹어 볼게!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Ты уже́ ел э́ту еду́? / Ты про́бовал э́ту еду́? / Я ещё не про́бовал. / Я обяза́тельно попро́бую!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">띄 우제 옐 에뚜 예두? / 띄 쁘로바발 에뚜 예두? / 야 이쇼 니 쁘로바발. / 야 아비쟈젤나 빠쁘로부유!</span></div>
+<p class="pt">여자는 е́ла / про́бовала예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나 해야 할 게 좀 있어. / 너한테 할 말이 좀 있어. / 너한테 보여 줄 게 좀 있어. / 너 주려고 뭘 좀 가져왔어.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Мне на́до ко́е-что сде́лать. / Я хочу́ тебе́ ко́е-что сказа́ть. / Я хочу́ тебе́ ко́е-что показа́ть. / Я тебе́ ко́е-что принёс.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">므녜 나다 꼬예쉬또 즈젤라찌. / 야 하추 찌베 꼬예쉬또 스카잣찌. / 야 하추 찌베 꼬예쉬또 빠카잣찌. / 야 찌베 꼬예쉬또 프리노스.</span></div>
+<p class="pt">ко́е-что = 뭔가, 어떤 것. 여자는 принёс → принесла́.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 러시아는 처음인데 다 마음에 들어요. / 어떤 명소를 추천하시겠어요? / 여기가 이렇게 깨끗해서 놀랐어요. / 여기 오는 게 오래된 꿈이었어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я впервы́е в Росси́и, и всё мне о́чень нра́вится. / Каки́е достопримеча́тельности вы посове́туете посмотре́ть? / Меня́ удиви́ло, что здесь так чи́сто. / Я давно́ мечта́л сюда́ прие́хать.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 프페르브예 브 라시이, 이 프쇼 므녜 오친 느리비짜. / 카키예 다스타프리메차젤나스티 브이 빠사베뚜이쩨 빠스마틀레찌? / 미냐 우디빌라, 쉬또 즈데스 탁 치스타. / 야 다브노 미치딸 슈다 프리예하찌.</span></div>
+<p class="pt">впервы́е = 처음으로, достопримеча́тельность = 명소, удивля́ться = 놀라다, путеше́ствовать = 여행하다.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나는 하느님과 이야기해요. / 나는 하느님에 대해 생각해요. / 하느님께 감사해요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я говорю́ с Бо́гом. / Я ду́маю о Бо́ге. / Спаси́бо Бо́гу.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 가바류 즈 보감. / 야 두마유 아 보계. / 스빠시바 보구.</span></div>
+<p class="pt">моли́ться 변화: молю́сь / мо́лишься / мо́лится / мо́лимся / мо́литесь / мо́лятся. 과거: моли́лся(남) / моли́лась(여) / моли́лись(복).</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 하느님은 우리를 사랑해요. / 나는 하느님을 사랑해요. / 나는 매일 하느님께 기도해요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Бог лю́бит нас. / Я люблю́ Бо́га. / Я молю́сь Бо́гу ка́ждый день.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">보흐 류빗 나스. / 야 류블류 보가. / 야 말류스 보구 까쥐듸 졘.</span></div>
+<p class="pt">Бог 격변화: Бог / Бо́га / Бо́гу / Бо́га / Бо́гом / о Бо́ге.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: (노래 57) 그들도 하느님의 벗이 될 수 있어요. / 나는 러시아어로 말할 수 있어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Друзья́ми Бо́га мо́гут стать они́. / Я могу́ говори́ть по-ру́сски.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">드루지야미 보가 모굿 스따찌 아니. / 야 마구 가바리찌 빠루스끼.</span></div>
+<p class="pt">мочь 변화: могу́ / мо́жет / мо́жем / мо́гут. стать = 되다, друзья́ → друзья́ми예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: (노래 84) 우리는 도우러 서둘러 가요, 가장 필요한 곳에 있을 거예요. / 도움을 기다리는 곳으로 서둘러 가요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">На по́мощь мы спеши́м, бу́дем там, где всего́ нужне́й. / Спеши́м туда́, где по́мощь ждут.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">나 뽀마쉬 믜 스삐쉼, 부짐 땀, 그졔 프시보 누쥬녜이. / 스삐쉼 뚜다, 그졔 뽀마쉬 즈둣.</span></div>
+<p class="pt">спеши́ть = 서두르다예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: (노래 75) 여기 제가 있어요, 나의 하느님, 저를 보내 주세요. / 저는 준비됐어요! 저를 보내 주세요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Вот я, мой Бог, пошли́ меня́. / Я гото́в! Пошли́ меня́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">봇 야, 모이 보흐, 빠쉴리 미냐. / 야 가또프! 빠쉴리 미냐.</span></div>
+<p class="pt">여자는 Я гото́ва!예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 피곤했지만 그래도 집회에 갔어요. / 하지만 그렇지 않아요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я уста́л, одна́ко я пошёл на встре́чу. / Одна́ко э́то не так.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 우스딸, 아드나까 야 빠숄 나 프스뜨례추. / 아드나까 에따 니 딱.</span></div>
+<p class="pt">одна́ко는 но보다 격식 있는 &quot;하지만&quot;이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 붉은 광장에 해가 빛나요. 그리고 오늘 나는 정말 좋아요!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">На Кра́сной пло́щади све́тит со́лнце. И мне сего́дня о́чень хорошо́!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">나 끄라스나이 쁠로샤지 스볘찟 손쩨. 이 므녜 시보드냐 오친 하라쇼!</span></div>
+<p class="pt">Мне хорошо́ = 나는 기분이 좋아요예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나는 러시아어를 배운 지 벌써 2년 됐어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я учу́ ру́сский уже́ два го́да.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 우추 루스끼 우줴 드바 고다.</span></div>
+<p class="pt">러시아어는 &quot;벌써 2년째 배우고 있어요&quot;처럼 현재형으로 말해요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 내년 6월에 러시아에 가요. / 여름에 모스크바가 나를 기다려요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">В сле́дующем году́ в ию́не я пое́ду в Росси́ю. / Ле́том меня́ ждёт Москва́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">프 슬례두유쉠 가두 브 이유녜 야 빠예두 브 라씨유. / 례땀 미냐 즈죳 마스끄바.</span></div>
+<p class="pt">в сле́дующем году́ = 내년에, в ию́не = 6월에예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 이건 비빔밥이에요. 밥, 채소, 계란을 넣고 섞어서 먹어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Э́то пибимпа́п. Кладём рис, о́вощи, яйцо́, переме́шиваем и еди́м.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">에따 삐빔빱. 끌라좀 리스, 오바쉬, 이이초, 삐리메쉬바옘 이 이짐.</span></div>
+<p class="pt">Кладём 넣어요, переме́шиваем 섞어요, еди́м 먹어요예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 도움이 필요해요. / 의사를 불러 주세요. / 머리가 아파요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Мне нужна́ по́мощь. / Вы́зовите врача́, пожа́луйста. / У меня́ боли́т голова́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">므녜 누쥬나 뽀마쉬. / 븨자비쩨 브라차, 빠잘스타. / 우 미냐 발릿 갈라바.</span></div>
+<p class="pt">아픈 곳은 У меня́ боли́т + 아픈 곳으로 말해요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 걸어왔어? / 응, 걸어서. / 아니, 지하철로. / 아니, 택시로.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Ты пришёл пешко́м? / Да, пешко́м. / Нет, на метро́. / Нет, на такси́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">띄 쁘리숄 삐쉬꼼? / 다, 삐쉬꼼. / 녯, 나 미뜨로. / 녯, 나 딱시.</span></div>
+<p class="pt">여자에게는 Ты пришла́ пешко́м?예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 4월에 / 금요일에 / 봄에 / 여름에</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">в апре́ле / в пя́тницу / весно́й / ле́том</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">브 아쁘렐례 / 프 뺘뜨니쭈 / 비스노이 / 례땀</span></div>
+<p class="pt">요일: понеде́льник, вто́рник, среда́, четве́рг, пя́тница, суббо́та, воскресе́нье. 계절: весна́ 봄, ле́то 여름, о́сень 가을, зима́ 겨울.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나는 한 달 전에 러시아어 공부를 시작했어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я на́чал учи́ть ру́сский ме́сяц наза́д.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 나찰 우치찌 루스끼 몌샤츠 나자트.</span></div>
+<p class="pt">ме́сяц наза́д = 한 달 전이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 예약했어요. / 방이 필요해요. / 아침 식사는 몇 시예요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">У меня́ бронь. / Мне ну́жен но́мер. / Во ско́лько за́втрак?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">우 미냐 브로니. / 므녜 누쥔 노미르. / 바 스꼴까 자프뜨락?</span></div>
+<p class="pt">호텔에서는 но́мер가 &quot;방&quot;이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나는 그에게 돈을 줬어요. / 그한테 전화해 주세요. / 나는 그를 알아요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я дал ему́ де́ньги. / Позвони́те ему́, пожа́луйста. / Я зна́ю его́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 달 이무 졘기. / 빠즈바니쩨 이무, 빠잘스타. / 야 즈나유 이보.</span></div>
+<p class="pt">он 그는 / его́ 그를 / ему́ 그에게. &quot;~에게&quot;는 мне 나에게, тебе́ 너에게, ей 그녀에게예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 한 번은 모스크바에 있었어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Одна́жды я был в Москве́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">아드나쥬듸 야 븰 브 마스끄볘.</span></div>
+<p class="pt">одна́жды = 어느 날, 한 번은이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 누구 한국어 하는 사람 있어요? / 누가 좀 도와주세요!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Кто́-нибудь говори́т по-коре́йски? / Помоги́те, кто́-нибудь!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">끄또니부찌 가바릿 빠까례이스끼? / 빠마기쩨, 끄또니부찌!</span></div>
+<p class="pt">кто́-нибудь는 질문이나 부탁에서 &quot;누구든, 아무나&quot;예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 그가 나한테서 전화기를 빼앗았어요. / 누군가가 내 전화기를 훔쳤어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Он о́тнял у меня́ телефо́н. / Кто́-то укра́л мой телефо́н.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">온 오뜨날 우 미냐 찔리폰. / 끄또따 우끄랄 모이 찔리폰.</span></div>
+<p class="pt">кто́-то는 &quot;(특정한) 누군가&quot;예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 전화기를 도둑맞았어요! / 가방을 빼앗겼어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">У меня́ укра́ли телефо́н! / У меня́ отня́ли су́мку.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">우 미냐 우끄랄리 찔리폰! / 우 미냐 앗냘리 숨꾸.</span></div>
+<p class="pt">укра́сть = 훔치다, отня́ть = 빼앗다예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 직진, 왼쪽, 오른쪽</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Пря́мо, нале́во, напра́во</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">쁘랴마, 날례바, 나쁘라바</span></div>
+<p class="pt">길을 물으면 꼭 듣는 세 단어예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 지하철 어디예요? / 호텔까지 어떻게 가요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Где метро́? / Как дое́хать до оте́ля?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">그졔 미뜨로? / 깍 다예하찌 다 아뗄랴?</span></div>
+<p class="pt">до 뒤에서 оте́ль → оте́ля가 돼요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 왜 그런지 모르겠지만…</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Не зна́ю почему́, но...</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">니 즈나유 빠치무, 노...</span></div>
+<p class="pt">말을 시작할 때 자연스럽게 쓰는 말이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 두 명 자리 주세요. / 아주 맛있어요! / 맛있게 드세요!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Стол на двои́х, пожа́луйста. / О́чень вку́сно! / Прия́тного аппети́та!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">스똘 나 드바이흐, 빠잘스타. / 오친 프꾸스나! / 쁘리야뜨나바 아삐찌따!</span></div>
+<p class="pt">на двои́х = 두 사람용이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 이거 짜증 나!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Меня́ э́то бе́сит!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">미냐 에따 볘싯!</span></div>
+<p class="pt">직역하면 &quot;이게 나를 화나게 해&quot;예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 화났어. / 화나. / 너 화났어? / 화내지 마!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я зол. / Я злюсь. / Ты зли́шься? / Не злись!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 졸. / 야 즐류스. / 띄 즐리쉬샤? / 니 즐리스!</span></div>
+<p class="pt">зли́ться 변화: злюсь / зли́шься / зли́тся / зли́мся / зли́тесь / зля́тся.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 너는 돈을 벌어. / 너 돈 많이 벌어?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Ты зараба́тываешь де́ньги. / Ты мно́го зараба́тываешь?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">띄 자라바띄바예쉬 졘기. / 띄 므노가 자라바띄바예쉬?</span></div>
+<p class="pt">зараба́тывать = 돈을 벌다예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 헷갈려요. / 단어가 헷갈려요. / 힘들어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я запу́тался. / Я пу́таю слова́. / Мне тру́дно.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 자뿌딸샤. / 야 뿌따유 슬라바. / 므녜 뜨루드나.</span></div>
+<p class="pt">여자는 Я запу́талась.라고 해요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 아직 몰라요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я ещё не зна́ю.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 이쑈 니 즈나유.</span></div>
+<p class="pt">ещё와 до сих по́р는 &quot;아직(까지)&quot;이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 응, 마시고 싶어. / 응, 커피 원해.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Да, я хочу́ пить. / Да, я хочу́ ко́фе.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">다, 야 하추 삐찌. / 다, 야 하추 꼬폐.</span></div>
+<p class="pt">хочу́ 뒤에 동사도, 물건도 바로 올 수 있어요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 뭐 마시고 싶어요? / 너 커피 마시고 싶어?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Что вы хоти́те пить? / Ты хо́чешь пить ко́фе?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">쉬또 븨 하찌쩨 삐찌? / 띄 호체쉬 삐찌 꼬폐?</span></div>
+<p class="pt">хоте́ть 변화: хочу́ / хо́чешь / хо́чет / хоти́м / хоти́те / хотя́т.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 물을 사고 싶어요. / 물 마시고 싶어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я хочу́ купи́ть во́ду. / Я хочу́ пить во́ду.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 하추 꾸삐찌 보두. / 야 하추 삐찌 보두.</span></div>
+<p class="pt">хочу́ + 동사 원형 = &quot;~하고 싶어요&quot;예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 물 주세요. / 저는 물 주세요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Во́ду, пожа́луйста. / Мне, пожа́луйста, во́ду.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">보두, 빠잘스타. / 므녜, 빠잘스타, 보두.</span></div>
+<p class="pt">вода́가 &quot;~을&quot; 자리에 오면 во́ду가 돼요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 메뉴 주세요. / 계산서 주세요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Мо́жно меню́? / Счёт, пожа́луйста.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">모쥬나 미뉴? / 숏, 빠잘스타.</span></div>
+<p class="pt">식당에서 가장 많이 쓰는 두 마디예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 도와드릴까요? / 그냥 구경하는 거예요. / 이걸로 할게요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Вам помо́чь? / Я про́сто смотрю́. / Я беру́ э́то.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">밤 빠모치? / 야 쁘로스따 스마트류. / 야 비루 에따.</span></div>
+<p class="pt">가게 점원이 Вам помо́чь?라고 물으면 이렇게 대답해요. беру́는 брать(가져가다, 사다)에서 왔어요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 보여 주세요. / 봉투 주세요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Покажи́те, пожа́луйста. / Мо́жно паке́т?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">빠까쥐쩨, 빠잘스타. / 모쥬나 빠꼣?</span></div>
+<p class="pt">Покажи́те는 показа́ть(보여 주다)의 부탁하는 말이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 좀 더 싸게 돼요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Мо́жно подеше́вле?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">모쥬나 빠지셰블례?</span></div>
+<p class="pt">시장에서 값을 깎을 때 써요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 이거 비싸요! / 이거 싸요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Э́то до́рого! / Э́то дёшево.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">에따 도라가! / 에따 죠쉬바.</span></div>
+<p class="pt">до́рого(비싸요)와 дёшево(싸요)는 반대말이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 카드로 내도 돼요? / 현금으로 내도 돼요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Мо́жно плати́ть ка́ртой? / Мо́жно плати́ть нали́чными?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">모쥬나 쁠라찌찌 까르따이? / 모쥬나 쁠라찌찌 날리치늬미?</span></div>
+<p class="pt">Мо́жно + 동사 원형 = &quot;~해도 돼요?&quot;예요. ка́рта → ка́ртой는 &quot;카드로&quot;예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 이거 얼마예요? / 이거 사고 싶어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Ско́лько э́то сто́ит? / Я хочу́ э́то купи́ть.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">스꼴까 에따 스또잇? / 야 하추 에따 꾸삐찌.</span></div>
+<p class="pt">сто́ить는 &quot;값이 ~이다&quot;, купи́ть는 &quot;사다&quot;예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 자~, 그럼, 음… / 그래서, 뭐요? / 자, 가자!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Ну / Ну, что? / Ну, пойдём!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">누 / 누, 쉬또? / 누, 빠이좀!</span></div>
+<p class="pt">Ну는 말 앞에 붙여 분위기를 이어 주는 말이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 저는 형(남자 형제)한테 가요. / 엄마한테</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я иду́ к бра́ту. / к ма́ме</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 이두 그 브라뚜. / 끄 마몌</span></div>
+<p class="pt">к 뒤에서 брат → бра́ту, ма́ма → ма́ме가 돼요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 친구한테 가요. / 의사한테 가요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я иду́ к дру́гу. / Я иду́ к врачу́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 이두 그 드루구. / 야 이두 끄 브라추.</span></div>
+<p class="pt">사람한테 갈 때는 к(~한테, ~쪽으로)를 써요. к 뒤에서 друг → дру́гу, врач → врачу́가 돼요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 가게에 가요. / 저는 호텔에 가요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я иду́ в магази́н. / Я иду́ в оте́ль.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 이두 브 마가진. / 야 이두 브 아뗄.</span></div>
+<p class="pt">장소로 갈 때는 в(~에, ~안으로)를 써요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: AI한테서 오는 결과를 기다려요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я жду результа́т от ИИ.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 쥬두 리줄따트 앗 이이</span></div>
+<p class="pt">от = ~한테서, ИИ = AI예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 어디 사세요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Где вы живёте?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">그졔 븨 쥐뵤쩨?</span></div>
+<p class="pt">친구에게는 Где ты живёшь?로 물어요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 저는 살아요. / 저는 한국에 살아요. / 저는 서울에 살아요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я живу́. / Я живу́ в Коре́е. / Я живу́ в Сеу́ле.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 쥐부. / 야 쥐부 프 까레예. / 야 쥐부 프 씨울례.</span></div>
+<p class="pt">원형은 жить(살다)예요. 사는 곳은 в 뒤에 써요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 잠깐만 기다려 주세요! / 기다려!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Подожди́те, пожа́луйста! / Подожди́!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">빠다쥐쩨, 빠잘스타! / 빠다쥐!</span></div>
+<p class="pt">존댓말은 Подожди́те, 친구에게는 Подожди́예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 저는 기다려요. / 택시 기다려요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я жду. / Я жду такси́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 쥬두. / 야 쥬두 딱시.</span></div>
+<p class="pt">원형은 ждать(기다리다)예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 그거 틀렸어.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Э́то непра́вильно.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">에따 니프라빌나</span></div>
+<p class="pt">맞으면 Э́то пра́вильно.예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 니가 한 말은 틀렸어. 다른 단어를 써야 해.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Ты сказа́ла непра́вильно. На́до испо́льзовать друго́е сло́во.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">띄 스까잘라 니프라빌나. 나다 이스뽈자바찌 드루고예 슬로바.</span></div>
+<p class="pt">여자에게는 сказа́ла, 남자에게는 сказа́л예요. На́до + 동사 원형 = &quot;~해야 해&quot;예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 어떤 영화 좋아해요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Како́й фильм вы лю́бите?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">까꼬이 필름 븨 류비쩨?</span></div>
+<p class="pt">фильм은 남성이라 како́й예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 저는 영화 보는 걸 좋아해요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я люблю́ смотре́ть кино́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 류블류 스마트레찌 끼노</span></div>
+<p class="pt">люблю́ 뒤에 동사 원형을 붙이면 &quot;~하는 걸 좋아해요&quot;예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나의 취미는 영화 보기예요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Моё хо́бби — смотре́ть фи́льмы. / Моё увлече́ние — кино́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">마요 호비 — 스마트레찌 필믜. / 마요 우블리체니예 — 끼노.</span></div>
+<p class="pt">хо́бби와 увлече́ние 둘 다 &quot;취미&quot;예요. 둘 다 중성이라 моё를 써요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 주의!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Внима́ние!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">브니마니예!</span></div>
+<p class="pt">주의 표지판에 자주 써 있어요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 내가 너한테 미리 말했잖아.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я тебя́ предупреди́л. / Я тебя́ предупреди́ла.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 찌뱌 쁘리두쁘리질. / 야 찌뱌 쁘리두쁘리질라.</span></div>
+<p class="pt">동사 원형은 предупреди́ть예요. 남자 화자는 предупреди́л, 여자 화자는 предупреди́ла예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 이건 경고예요!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Э́то предупрежде́ние!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">에따 쁘리두쁘리쥐제니예!</span></div>
+<p class="pt">предупрежде́ние는 &quot;경고&quot;예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: дра́ться(주먹으로 싸우다) 인칭 변화</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">я деру́сь / ты дерёшься / он дерётся / мы дерёмся / вы дерётесь / они́ деру́тся</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 지루스 / 띄 지료쉬샤 / 온 지료짜 / 믜 지렴샤 / 븨 지료쩨스 / 아니 지루짜</span></div>
+<p class="pt">과거는 дра́лся, драла́сь, дра́лись예요. 여기도 -ся/-сь가 항상 붙어요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: ссо́риться(말다툼하다) 인칭 변화</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">я ссо́рюсь / ты ссо́ришься / он ссо́рится / мы ссо́римся / вы ссо́ритесь / они́ ссо́рятся</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 쏘류스 / 띄 쏘리쉬샤 / 온 쏘리짜 / 믜 쏘림샤 / 븨 쏘리쩨스 / 아니 쏘랴짜</span></div>
+<p class="pt">과거는 남자 ссо́рился, 여자 ссо́рилась, 여럿 ссо́рились예요. 먼저 я, ты, мы만 외워도 충분해요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 너희는 자주 싸워? / 너 자주 싸워?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Вы ча́сто ссо́ритесь? / Ты ча́сто ссо́ришься?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">븨 차스타 쏘리쩨스? / 띄 차스타 쏘리쉬샤?</span></div>
+<p class="pt">여러 명이나 존댓말은 Вы, 친구 한 명은 Ты예요. ча́сто는 &quot;자주&quot;예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 저 사람들 (주먹으로) 싸우고 있어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Они́ деру́тся.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">아니 지루짜</span></div>
+<p class="pt">주먹으로 싸우는 것은 дра́ться예요. 말다툼(ссо́риться)과 구별해요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 우리 싸웠어요. / 싸우지 마세요!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Мы поссо́рились. / Не ссо́рьтесь!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">믜 빠쏘릴리스. / 니 쏘리쩨스!</span></div>
+<p class="pt">말다툼은 ссо́риться예요. 끝의 -сь/-ся는 모양이 바뀌어도 따라다녀요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나 아파요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я боле́ю.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 발례유.</span></div>
+<div class="r"><span class="ko">뜻: 머리가 아파요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">У меня́ боли́т голова́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">우 미냐 발릿 갈라바.</span></div>
+<p class="pt">어디가 아픈지는 У меня́ боли́т… 뒤에 부위를 넣어요. 배는 живо́т(쥐봇).</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 배고파 죽겠어요!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я умира́ю от го́лода!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 우미라유 앗 골라다!</span></div>
+<p class="pt">원형 умере́ть는 &quot;죽다&quot;. 농담으로 많이 써요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 당신의 옷이 아름다워요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">У вас краси́вая оде́жда.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">우 바스 끄라씨바야 아졔쥐다</span></div>
+<p class="pt">у вас는 존댓말, 친구에게는 у тебя́. 더 자연스러운 칭찬은 Вам о́чень идёт! (밤 오친 이죳!) = 정말 잘 어울려요!</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 가장 중요한 건 건강이에요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Са́мое гла́вное — здоро́вье.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">싸마예 글라브나예, 즈다로비예</span></div>
+<p class="pt">са́мое гла́вное는 &quot;가장 중요한 건&quot;.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 무엇보다도 고마워요!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Пре́жде всего́, спаси́бо!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">쁘례쥐졔 프시보, 스빠씨바!</span></div>
+<p class="pt">пре́жде всего́는 &quot;무엇보다도&quot;.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나는 매일 커피를 마셔요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я пью ко́фе ка́ждый день.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 삐유 꼬페 까쥐듸 졘</span></div>
+<p class="pt">ка́ждый день은 &quot;매일&quot;.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 모스크바보다 더 좋은 게 있을까요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Что мо́жет быть лу́чше, чем Москва́?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">쉬또 모젯 븨찌 루치셰, 쳄 마스크바?</span></div>
+<p class="pt">끝을 올려서 질문으로 말해요. 서울은 Сеу́л.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 아는 것보다 더 좋은 게 뭐가 있을까요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Что мо́жет быть лу́чше, чем знать?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">쉬또 모젯 븨찌 루치셰, 쳄 즈나찌?</span></div>
+<p class="pt">лу́чше는 хорошо́의 비교형 &quot;더 좋은&quot;, чем은 &quot;~보다&quot;.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 그의 수많은 작품들을 연구하면서</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">исследу́я его́ многочи́сленные творе́ния</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">이슬례두야 이보 므나가치슬롄늬예 뜨바례니야</span></div>
+<p class="pt">его́의 г는 &quot;브&quot;로 읽어요. 책이나 박물관 설명에 나오는 말이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나 가야 해요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Мне ну́жно идти́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">므녜 누쥬나 이찌.</span></div>
+<div class="r"><span class="ko">뜻: 택시가 필요해요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Мне ну́жно такси́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">므녜 누쥬나 딱씨.</span></div>
+<p class="pt">Мне ну́жно 뒤에 동사 원형(해야 해요)이나 명사(필요해요).</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나도 왜 그런지는 모르겠지만…</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я сам не зна́ю почему́, но…</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 쌈 니 즈나유 빠치무, 노…</span></div>
+<p class="pt">сам은 &quot;나도, 나 스스로&quot;, почему́는 &quot;왜&quot;, но는 &quot;하지만&quot;.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나 지금 운전 중이에요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я веду́ маши́ну.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 비두 마쉬누</span></div>
+<p class="pt">지금 운전하는 중일 때는 вести́. 나는 веду́.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 너 운전해?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Ты во́дишь маши́ну?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">띄 보지쉬 마쉬누?</span></div>
+<p class="pt">습관처럼 운전하는 것은 води́ть. &quot;나는 차를 운전해요&quot;는 Я вожу́ маши́ну. (야 바쥬 마쉬누).</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 내 발음이 맞아요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Моё произноше́ние пра́вильно?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">마요 쁘라이즈나쉐니예 쁘라빌나?</span></div>
+<p class="pt">произноше́ние는 &quot;발음&quot;, пра́вильно는 &quot;맞아, 올바르게&quot;.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 내가 너한테 방금 물어본 거야.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я про́сто спроси́л тебя́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 쁘로스따 스쁘라실 찌뱌</span></div>
+<p class="pt">спроси́ть는 тебя́를 받아요(тебе́ 아님). 여자 화자면 спроси́ла.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 아니, 나는 러시아에 가 본 적 없어. 그런데 러시아에 갈 계획이야.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Нет, я не был в Росси́и. Но я плани́рую пое́хать в Росси́ю.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">녯, 야 니 빌 브 라시이. 노 야 플라니루유 빠예하찌 브 라시유</span></div>
+<p class="pt">위치는 в Росси́и, 방향은 в Росси́ю. 남자는 был, 여자는 была́. 다음 해는 в сле́дующем году́, 지난해는 про́шлый год예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: &quot;между&quot;랑 &quot;среди&quot;는 무슨 차이야?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Кака́я ра́зница ме́жду слова́ми «ме́жду» и «среди́»?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">까까야 라즈니짜 메즈두 슬라바미 «메즈두» 이 «스리지»?</span></div>
+<p class="pt">ме́жду는 둘 사이, среди́는 여럿 가운데예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: &quot;видеть&quot;랑 &quot;смотреть&quot;는 무슨 차이야?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Кака́я ра́зница ме́жду слова́ми «ви́деть» и «смотре́ть»?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">까까야 라즈니짜 메즈두 슬라바미 «비졔찌» 이 «스마뜨례찌»?</span></div>
+<p class="pt">ви́деть는 눈에 들어오는 &quot;보다/보이다&quot;, смотре́ть는 일부러 바라보는 거예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나는 포기 안 해!</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я не сдаю́сь!</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 니 즈다유스!</span></div>
+<p class="pt">원형은 сдава́ться예요. 끝의 -ся는 모양이 바뀌어도 따라다녀요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 이 음식 먹어 봤어?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Ты ел э́ту еду́?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">띄 옐 에뚜 예두?</span></div>
+<p class="pt">경험을 물을 때 과거형을 써요. 여자에게는 Ты е́ла э́ту еду́?예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나 해야 할 게 좀 있어.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Мне ну́жно ко́е-что сде́лать.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">므녜 누쥬나 꼬예쉬또 즈젤라찌</span></div>
+<p class="pt">Мне ну́жно 뒤에는 동사 원형이나 물건이 와요. ко́е-что는 &quot;뭔가 좀&quot;이고, что-то는 &quot;뭔지 모를 것&quot;에 더 가까워요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 그 일을 해야만 러시아에 갈 수 있어.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я смогу́ пое́хать в Росси́ю, то́лько е́сли сде́лаю э́то.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 스마구 빠예하찌 브 라시유, 똘까 예슬리 즈젤라유 에따</span></div>
+<p class="pt">то́лько е́сли는 &quot;~해야만&quot;이에요. &quot;러시아로 가다&quot;는 в Росси́ю, 이미 와 있으면 в Росси́и예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 텔레비전에서 봤어요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я ви́дел по телеви́зору.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 비젤 빠 찔리비저루</span></div>
+<p class="pt">ви́дел은 &quot;봤어요&quot;(남자), 여자면 ви́дела. встре́тил은 &quot;만났어요&quot;라서 방송으로 본 것에는 쓰지 않아요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 그래서 나는 모스크바가 서울보다 더 춥다고 생각해요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Поэ́тому я ду́маю, Москва́ холо́днее, чем Сеу́л.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">빠에따무 야 두마유, 마스크바 할라드녜예, 쳄 세울</span></div>
+<p class="pt">холо́днее는 &quot;더 추운&quot;이에요. Поэ́тому는 &quot;그래서&quot;예요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 내 생각엔 모스크바가 서울보다 더 커요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">По-мо́ему, Москва́ бо́льше, чем Сеу́л.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">빠모이무, 마스크바 볼셰, 쳄 세울</span></div>
+<p class="pt">По-мо́ему는 &quot;내 생각엔&quot;이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 러시아가 한국보다 더 커요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Росси́я бо́льше, чем Коре́я.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">라시야 볼셰, 쳄 까례야</span></div>
+<p class="pt">비교할 때는 &quot;더 ~한 + чем(~보다)&quot;를 붙여요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 비밀번호</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">паро́ль</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">빠롤</span></div>
+<p class="pt">명사예요. 와이파이나 문 비밀번호를 말할 때 써요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 여기 인터넷 있어요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Здесь есть интерне́т?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">즈졔시 예스찌 인떼르넷?</span></div>
+<div class="r"><span class="ko">뜻: 여기 와이파이 있어요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Здесь есть Wi-Fi?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">즈졔시 예스찌 와이파이?</span></div>
+<p class="pt">Здесь есть…?는 &quot;여기에 ~이 있어요?&quot;예요. &quot;여기서 인터넷 써도 돼요?&quot;는 Здесь мо́жно по́льзоваться интерне́том? (즈졔시 모쥬나 뽈자바짜 인떼르네땀?)이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 기분 어때요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Как твоё настрое́ние?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">깍 트바요 나스트로예니예</span></div>
+<p class="pt">настрое́ние는 &quot;기분&quot;이에요. 친구에게 묻는 말이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 도와줘서 고마워요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Спаси́бо за то, что ты помогла́.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">스빠씨바 자 또, 쉬또 띄 빠마글라</span></div>
+<p class="pt">Спаси́бо за то, что…는 &quot;~해 줘서 고마워&quot;예요. 여자에게 하는 말이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 화장실 어디예요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Где туале́т?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">그데 뚜아렛</span></div>
+<p class="pt">Где는 &quot;어디&quot;예요. 뒤에 찾고 싶은 것을 붙이면 돼요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 이걸로 할게요. / 이거 살게요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я возьму́ э́то.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 바즈무 에따</span></div>
+<p class="pt">물건을 고르고 나서 쓰는 말이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 비싸요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">До́рого.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">도러가</span></div>
+<p class="pt">가격을 듣고 난 뒤에 바로 쓸 수 있어요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 이거 얼마예요?</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Ско́лько э́то сто́ит?</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">스꼴까 에또 스또잇</span></div>
+<p class="pt">쇼핑할 때 가장 많이 쓰는 말이에요. э́то는 &quot;이것&quot;이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 나는 러시아어를 공부해요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Я изуча́ю ру́сский язы́к.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">야 이즈챠유 루스끼 야즤크</span></div>
+<p class="pt">원형은 изуча́ть예요. 나는 изуча́ю처럼 사람마다 끝이 바뀌어요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 제 이름은 글렙이에요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Меня́ зову́т Глеб.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">미냐 자붓 글렙</span></div>
+<p class="pt">Меня́ зову́т 뒤에 이름을 넣으면 돼요. &quot;나는 ~라고 불려요&quot;라는 뜻이에요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 만나서 정말 반가워요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">О́чень прия́тно.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">오친 프리야트나</span></div>
+<p class="pt">처음 만났을 때 인사예요. 조금 더 길게는 Прия́тно познако́миться. (프리야트나 빠즈나꼬미짜)라고도 해요.</p>
+</section>
+<section class="card">
+<div class="r"><span class="ko">뜻: 안녕하세요.</span></div>
+<div class="r"><span class="ko">러시아어</span><span class="ru">Приве́т.</span></div>
+<div class="r"><span class="ko">한글 발음</span><span class="say">쁘리볫</span></div>
+<p class="pt">친구나 편한 사이에서 쓰는 인사예요. 처음 배울 때 가장 먼저 쓰는 말이에요.</p>
+</section>
+</div>
 <script>
-const AUD = ['2026-11-04', '2026-11-03', '2026-11-02', '2026-11-01', '2026-10-31'];
-const TTL = ['2026.11.04 · 번역 연습', '2026.11.03 · 목요일 대화 준비: 번역 연습', '2026.11.02 · 목요일 대화 준비: 번역 연습', '2026.11.01 · 내 회사 이야기 + 과거형·나라 이름', '2026.10.31 · кото́рый 문장 + 여행 표현'];
-const au = document.getElementById("au");
-const pp = document.getElementById("pp");
-const nowTitle = document.getElementById("nowTitle");
-const m1 = document.getElementById("m1");
-const m2 = document.getElementById("m2");
-const plays = [...document.querySelectorAll(".play")];
-let cur = -1, mode = "all", rate = 1;
-function load(i, play) {
-  cur = i;
-  au.src = "audio/lecture-" + AUD[i] + ".mp3";
-  au.playbackRate = rate;
-  nowTitle.textContent = TTL[i];
-  plays.forEach((b, j) => b.classList.toggle("on", j === i));
-  if (play) au.play().catch(() => {});
-}
-plays.forEach(b => b.onclick = () => load(+b.dataset.i, true));
-pp.onclick = () => {
-  if (cur < 0) { load(0, true); return; }
-  if (au.paused) au.play().catch(() => {});
-  else au.pause();
-};
-au.onplay = () => { pp.textContent = "⏸"; };
-au.onpause = () => { pp.textContent = "▶"; };
-au.onloadedmetadata = () => { au.playbackRate = rate; };
-function setMode(m) {
-  mode = m;
-  au.loop = (m === "one");
-  m1.classList.toggle("on", m === "all");
-  m2.classList.toggle("on", m === "one");
-}
-m1.onclick = () => setMode("all");
-m2.onclick = () => setMode("one");
-au.onended = () => { if (mode === "all" && cur + 1 < AUD.length) load(cur + 1, true); };
-document.querySelectorAll(".modes [data-r]").forEach(b => {
-  b.onclick = () => {
-    rate = +b.dataset.r;
-    au.playbackRate = rate;
-    document.querySelectorAll(".modes [data-r]").forEach(x => x.classList.toggle("on", x === b));
-  };
-});
+const b=document.getElementById('q');b.onclick=()=>{const on=document.body.classList.toggle('quiz');b.textContent=on?'모두 보기':'숨기고 말해보기';document.querySelectorAll('.ru').forEach(e=>e.classList.remove('show'))};
+document.querySelectorAll('.ru').forEach(e=>e.onclick=()=>e.classList.toggle('show'));
 </script>
 <script>
 if ("serviceWorker" in navigator) {
